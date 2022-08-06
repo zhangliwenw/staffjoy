@@ -31,7 +31,7 @@ public interface AccountClient {
     @GetMapping(path = "/list")
     ListAccountResponse listAccounts(@RequestHeader(AuthConstant.AUTHORIZATION_HEADER) String authz, @RequestParam int offset, @RequestParam @Min(0) int limit);
 
-    // GetOrCreate is for internal use by other APIs to match a user based on their phonenumber or email.
+    //    GetOrCreate is for internal use by other APIs to match a user based on their phonenumber or email.
     @PostMapping(path= "/get_or_create")
     GenericAccountResponse getOrCreateAccount(@RequestHeader(AuthConstant.AUTHORIZATION_HEADER) String authz, @RequestBody @Valid GetOrCreateRequest request);
 
